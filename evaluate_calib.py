@@ -64,7 +64,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 @ex.config
 def config():
     dataset = 'kitti/odom'
-    data_folder = '/home/wangshuo/Datasets/KITTI/odometry_color/'
+    data_folder = '/home/jay/datasets/KITTI/odometry_color/'
     test_sequence = 0
     use_prev_output = False
     max_t = 1.5
