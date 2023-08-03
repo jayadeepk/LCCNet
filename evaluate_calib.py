@@ -84,7 +84,7 @@ def config():
     dropout = 0.0
     max_depth = 80.
     iterative_method = 'multi_range' # ['multi_range', 'single_range', 'single']
-    output = '../output'
+    output = 'output'
     save_image = False
     outlier_filter = True
     outlier_filter_th = 10
