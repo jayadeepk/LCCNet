@@ -64,7 +64,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 @ex.config
 def config():
     dataset = 'kitti/odom'
-    data_folder = '/home/jay/datasets/KITTI/odometry_color/'
+    data_folder = '/home/jay/datasets/KITTI-CARLA-KITTI-format'
     test_sequence = 0
     use_prev_output = False
     max_t = 1.5
@@ -85,7 +85,7 @@ def config():
     max_depth = 80.
     iterative_method = 'multi_range' # ['multi_range', 'single_range', 'single']
     output = 'output'
-    save_image = False
+    save_image = True
     outlier_filter = True
     outlier_filter_th = 10
     out_fig_lg = 'EN' # [EN, CN]
@@ -326,7 +326,7 @@ def main(_config, seed):
                 pcl_lidar.points = o3.Vector3dVector(pc_lidar.T[:, :3])
 
                 # o3.draw_geometries(downpcd)
-                o3.write_point_cloud(pc_lidar_path + '/{}.pcd'.format(batch_idx), pcl_lidar)
+                # o3.write_point_cloud(pc_lidar_path + '/{}.pcd'.format(batch_idx), pcl_lidar)
 
 
             R = quat2mat(sample['rot_error'][idx])
@@ -358,7 +358,7 @@ def main(_config, seed):
                 pcl_input.colors = o3.Vector3dVector(np.vstack((R, G, B)).T)
 
                 # o3.draw_geometries(downpcd)
-                o3.write_point_cloud(pc_input_path + '/{}.pcd'.format(batch_idx), pcl_input)
+                # o3.write_point_cloud(pc_input_path + '/{}.pcd'.format(batch_idx), pcl_input)
 
             # PAD ONLY ON RIGHT AND BOTTOM SIDE
             rgb = sample['rgb'][idx].cuda()
@@ -488,7 +488,7 @@ def main(_config, seed):
                     pcl_pred.colors = o3.Vector3dVector(np.vstack((R, G, B)).T)
 
                     # o3.draw_geometries(downpcd)
-                    o3.write_point_cloud(pc_pred_path + '/{}.pcd'.format(batch_idx), pcl_pred)
+                    # o3.write_point_cloud(pc_pred_path + '/{}.pcd'.format(batch_idx), pcl_pred)
 
 
                 if _config['save_image']:
