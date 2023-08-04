@@ -197,6 +197,9 @@ class DatasetLidarCameraKittiOdometry(Dataset):
         #     pc_in[1, :] *= -1
 
         img = Image.open(img_path)
+        if img.mode == 'RGBA':
+            img = img.convert('RGB')
+
         # img = cv2.imread(img_path)
         img_rotation = 0.
         # if self.split == 'train':
