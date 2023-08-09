@@ -52,7 +52,7 @@ def config():
     dataset = 'kitti/odom' # 'kitti/raw'
     data_folder = '/home/jay/datasets/KITTI-CARLA-KITTI-format'
     use_reflectance = False
-    val_sequence = 0
+    val_sequence = 54
     epochs = 1
     BASE_LEARNING_RATE = 3e-4  # 1e-4
     loss = 'combined'
