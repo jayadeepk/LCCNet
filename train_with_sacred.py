@@ -50,7 +50,7 @@ ex.captured_out_filter = apply_backspaces_and_linefeeds
 def config():
     checkpoints = './checkpoints/'
     dataset = 'kitti/odom' # 'kitti/raw'
-    data_folder = '/home/jay/datasets/KITTI/odometry_color/'
+    data_folder = '/home/jay/datasets/KITTI-CARLA-KITTI-format'
     use_reflectance = False
     val_sequence = 0
     epochs = 1
