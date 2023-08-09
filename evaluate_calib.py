@@ -65,7 +65,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 def config():
     dataset = 'kitti/odom'
     data_folder = '/home/jay/datasets/KITTI-CARLA-KITTI-format'
-    test_sequence = 0
+    test_sequence = 50
     use_prev_output = False
     max_t = 1.5
     max_r = 20.
